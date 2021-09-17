@@ -7,10 +7,14 @@ export class App extends React.Component {
     contacts: [],
   };
 
+  contactFormSubmitHandle = (data) => {
+    console.log(data);
+   }
+
   render() {
     return (<section>
       <h1>Phonebook</h1>
-      <ContactForm />
+      <ContactForm onSubmit={this.contactFormSubmitHandle }/>
 
       <h2>Contacts</h2>
       <ul>
