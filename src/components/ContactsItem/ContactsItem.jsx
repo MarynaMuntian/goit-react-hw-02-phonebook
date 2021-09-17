@@ -1,10 +1,10 @@
 import React from 'react';
 import css from './ContactsItem.module.css';
 
-export const ContactsItem = ({id, name, number}) => {
+export const ContactsItem = ({name, number}) => {
     return (
     <li>
-      <span></span>
+            <span>{name} {number}</span>
     </li>
   );
  };
