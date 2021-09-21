@@ -13,22 +13,25 @@ export class App extends React.Component {
     this.setState(prevState => (
       {
         contacts: prevState.contacts.map(({ contact }) => {
-          if(this.state.contacts.includes(data)) {
-      return alert(`${contact.name} is already in contacts`);
-    };
-  return (console.log([...prevState, ...contact]));
+          contact.name === data.name ? 
+      alert(`${contact.name} is already in contacts`)
+     : this.setState(({ contacts }) => ({
+          contacts: [data, ...contacts],
+        }));;
         })
       })
     );
    }
 
   render() {
+    // const { contacts } = this.state;
+
     return (<section>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={this.contactFormSubmitHandle }/>
 
       <h2>Contacts</h2>
-      <Contacts contact={this.state.contacts}/>
+      <Contacts contacts={this.state.contacts}/>
     </section >);
   };
 };
