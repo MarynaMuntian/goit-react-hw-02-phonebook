@@ -1,13 +1,15 @@
 import React from 'react';
 import css from './Contacts.module.css';
-import { ContactsItem } from '../ContactsItem/ContactsItem';
+import { App } from 'components/App/App';
+// import { ContactsItem } from '../ContactsItem/ContactsItem';
 
 export const Contacts = ({ contacts }) => {
     return (
         <ul>
             {
-                contacts.map(({ id, name, number }) => {
-                    return <ContactsItem key={id} name={name} number={number} />;
+                contacts.map(({ contact }) => {
+                    // const { name, number } = contact;
+                    return (<li> {contact.name}: {contact.number} </li>);
      })
             }
         </ul>
