@@ -7,8 +7,8 @@ export const Contacts = ({ contacts }) => {
     return (
         <ul>
             {
-                contacts.map(({ contact }) => {
-                    // const { name, number } = contact;
+                contacts.map(({ name, number }) => {
+                    const contact = { name, number };
                     return (<li> {contact.name}: {contact.number} </li>);
      })
             }

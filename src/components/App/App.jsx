@@ -17,16 +17,9 @@ export class App extends React.Component {
     console.log(data);
     this.setState(({contacts}) => (
       {
-        contacts: [contacts.map(({ contact }) => {
-          contact.name === data.name ? 
-      alert(`${contact.name} is already in contacts`)
-     : this.setState(({ contact }) => ({
-          contacts: [contact, ...contacts],
-        }));;
-        })]
-      })
-    );
-   }
+        contacts: [data, ...contacts],
+        }));
+        };
 
   render() {
     // const { contacts } = this.state;
