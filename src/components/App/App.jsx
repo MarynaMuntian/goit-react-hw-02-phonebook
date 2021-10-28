@@ -19,7 +19,13 @@ export class App extends React.Component {
       {
         contacts: [data, ...contacts],
         }));
-        };
+  };
+  
+  deleteContact = (contactId) => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId)
+    }))
+  };
 
   render() {
     // const { contacts } = this.state;
@@ -29,7 +35,7 @@ export class App extends React.Component {
       <ContactForm onSubmit={this.contactFormSubmitHandle }/>
 
       <h2>Contacts</h2>
-      <Contacts contacts={this.state.contacts}/>
+      <Contacts contacts={this.state.contacts} onDeleteContact={this.deleteContact }/>
     </section >);
   };
 };
