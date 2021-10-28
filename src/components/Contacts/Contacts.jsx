@@ -7,9 +7,12 @@ export const Contacts = ({ contacts }) => {
     return (
         <ul>
             {
-                contacts.map(({ name, number }) => {
-                    const contact = { name, number };
-                    return (<li> {contact.name}: {contact.number} </li>);
+                contacts.map(({ id, name, number }) => {
+                    const contact = { id, name, number };
+                    return (<li key={contact.id} className={css.contactsList__item}>
+                        <p className={css.contactsList__text}>{contact.name}: {contact.number}</p>
+                        <button className={css.contactsList__deleteBtn}>Delete</button>
+                    </li>);
      })
             }
         </ul>
